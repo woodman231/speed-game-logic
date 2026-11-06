@@ -1,0 +1,58 @@
+{
+  "name": "@woodman231/speed-game-logic",
+  "version": "1.0.0",
+  "description": "Headless game engine and state logic for the card game Speed in TypeScript (ESM & CJS).",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.cts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "speed",
+    "speed-card-game",
+    "card-game",
+    "game-engine",
+    "game-logic",
+    "cards",
+    "typescript"
+  ],
+  "author": "woodman231",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/woodman231/speed-game-logic.git"
+  },
+  "bugs": {
+    "url": "https://github.com/woodman231/speed-game-logic/issues"
+  },
+  "homepage": "https://github.com/woodman231/speed-game-logic#readme",
+  "devDependencies": {
+    "tsup": "^8.5.1",
+    "typescript": "^5.7.3",
+    "vitest": "^5.1.0"
+  }
+}
